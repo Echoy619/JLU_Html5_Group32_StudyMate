@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate - 课程</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>课程表</h1>
+        <p>查看和管理你的课程安排</p>
+    </header>
+
+
+    <main>
+
+        <!-- 星期选择 -->
+       <section>
+    <h2>本周课程</h2>
+    <div class="day-list">
+    <button class="day-btn" data-day="1">周一</button>
+    <button class="day-btn" data-day="2">周二</button>
+    <button class="day-btn" data-day="3">周三</button>
+    <button class="day-btn" data-day="4">周四</button>
+    <button class="day-btn" data-day="5">周五</button>
+    <button class="day-btn" data-day="6">周六</button>
+    <button class="day-btn" data-day="0">周日</button>
+    </div>
+</section>
+
+
+        <!-- 课程列表 -->
+        <section>
+            <h2>课程列表</h2>
+            <div id="courseList">
+                <p>这一天没有课程。</p>
+            </div>
+        </section>
+
+
+        <!-- 添加课程 -->
+
+        <section>
+            <h2>添加课程</h2>
+            
+
+            <select id="courseDay">
+                <option value="1">周一</option>
+                <option value="2">周二</option>
+                <option value="3">周三</option>
+                <option value="4">周四</option>
+                <option value="5">周五</option>
+                <option value="6">周六</option>
+                <option value="0">周日</option>
+            </select>
+
+            <label>开始时间</label>
+            <input id="startTime" type="time">
+
+            <label>结束时间</label>
+            <input id="endTime" type="time">
+
+            <input id="courseName" type="text" placeholder="课程名称">
+
+            <input id="courseLocation" type="text" placeholder="上课地点">
+
+            <button class="btn-primary" onclick="addCourse()">添加课程</button>
+        </section>
+    </main>
+
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="course.html" class="active">课程</a>
+        <a href="task.html">任务</a>
+        <a href="focus.html">专注</a>
+        <a href="profile.html">我的</a>
+    </nav>
+
+    <script src="js/course.js"></script>
+    <script src="js/timer.js"></script>
+
+</body>
+
+</html>

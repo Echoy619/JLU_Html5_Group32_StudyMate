@@ -1,0 +1,513 @@
+/*页面颜色、大小、布局、按钮、卡片、手机端界面等*/
+
+/*防止输入框超出屏幕*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding-bottom: 70px;
+    background-color: whitesmoke;
+    color: dimgrey;
+}
+
+
+header {
+    padding: 20px;
+    background: linear-gradient(135deg , #498ac8 , #c4ecfc);
+    color: ghostwhite;
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+header p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+main {
+    padding: 20px;
+}
+
+
+section {
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;/*使按钮更圆滑*/
+    padding: 10px 16px;
+    font-size: 13px;
+    background: #f8f8ff;
+    color: #2d3436;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.90);
+    opacity: 0.80;
+}
+
+
+/*主按钮*/
+.btn-primary {
+    background: #498ac8;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+}
+
+/*星期按钮*/
+.day-btn.active {
+    background: #498ac8;
+    color: white;
+}
+
+.day-list {
+    display: flex;
+    gap: 4px;
+}
+
+.day-btn {
+    flex: 1;
+    padding: 8px 0;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* 输入框 */
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dfe4ea;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/*课程*/
+.course-card {
+    background: #f8f8ff;
+    border-left: 4px solid #498ac8;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.task-card.done {
+    border-left-color: green;
+    opacity: 0.6;
+}
+
+.course-time {
+    font-size: 12px;
+    color: #498ac8;
+    font-weight: bold;
+}
+
+.course-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.course-location {
+    font-size: 13px;
+    color: #636e72;
+}
+
+
+nav {
+    position: fixed;
+
+    bottom: 0;
+
+    left: 50%;
+
+    width: 100%;
+    transform: translateX(-50%);
+    max-width: 480px;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 15px 0;
+
+    background-color: white;
+
+    border-top: 1px solid #dddddd;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #b2bec3;
+    font-size: 13px;
+}
+
+nav a.active {
+    color: #498ac8;
+    font-weight: bold;
+}
+
+/* ===== 统一任务页面文字颜色 ===== */
+
+main {
+    color: #666666;
+}
+
+/* 标题统一灰色 */
+main h1,
+main h2,
+main h3 {
+    color: #666666;
+}
+
+/* 表单标签统一灰色 */
+main label {
+    color: #666666;
+}
+
+/* 输入框和下拉框文字统一灰色 */
+main input,
+main select {
+    color: #666666;
+}
+
+/* 按钮文字统一灰色 */
+main button {
+    color: #666666;
+}
+
+/* 普通文字统一灰色 */
+main p {
+    color: #666666;
+}
+
+/* =========================================
+   StudyMate 首页高级布局
+   ========================================= */
+
+
+/* ===== 首页学习概览 ===== */
+
+.study-overview {
+    padding: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+
+/* Good Morning 和日期之间的层级 */
+
+.study-overview h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.study-overview #today-date {
+    font-size: 13px;
+    margin-bottom: 18px;
+    opacity: 0.7;
+}
+
+
+/* ===== 三个数据卡片的总容器 ===== */
+
+.overview-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+
+/* ===== 每一个数据区域 ===== */
+
+.overview-item {
+    min-width: 0;
+    padding: 14px 8px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* 鼠标放上去轻微浮起 */
+
+.overview-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+/* 📚 ✅ ⏱️ 这一行 */
+
+.overview-item span {
+    display: block;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+/* 下面真正的数据 */
+
+.overview-item strong {
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    word-break: normal;
+}
+
+
+/* ===== 首页普通板块动画 ===== */
+
+main section {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+main section:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================================
+   首页课程卡片细节优化
+   ========================================= */
+
+#today-course-list .course-card {
+    position: relative;
+
+    padding: 14px 14px 14px 16px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#today-course-list .course-card:hover {
+    transform: translateX(3px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+#today-course-list .course-time {
+    margin-bottom: 5px;
+}
+
+
+#today-course-list .course-name {
+    margin-bottom: 5px;
+}
+
+
+#today-course-list .course-location {
+    margin-top: 3px;
+}
+
+/* =========================================
+   底部导航细节优化
+   ========================================= */
+
+nav {
+    z-index: 100;
+
+    box-shadow:
+        0 -4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+nav a {
+    position: relative;
+
+    padding: 4px 8px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* 当前页面下面增加小圆点 */
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -7px;
+
+    transform: translateX(-50%);
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+/* =========================================
+   按钮交互优化
+   ========================================= */
+
+button {
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* =========================================
+   输入框交互优化
+   ========================================= */
+
+input,
+select {
+    outline: none;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input:focus,
+select:focus {
+    border-width: 1px;
+
+    box-shadow:
+        0 0 0 3px rgba(108, 92, 231, 0.08);
+}
+
+/* =========================================
+   小屏幕优化
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .overview-card {
+        gap: 6px;
+    }
+
+    .overview-item {
+        padding: 12px 5px;
+    }
+
+    .overview-item span {
+        font-size: 11px;
+    }
+
+    .overview-item strong {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   首页动态日期
+   ========================================= */
+
+.date-info {
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+
+.date-info #today-date {
+    margin: 0 0 3px 0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.date-info #week-info {
+    font-size: 11px;
+
+    opacity: 0.65;
+}
+
+/* 暂时隐藏重复的 My Study 区域 */
+.my-study {
+    display: none;
+}
+
+/* 长英文、长数字自动断行 */
+.course-name,
+.course-location,
+#today-course-list,
+#today-task-list,
+#taskList {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}

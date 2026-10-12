@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate - 专注</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <h1>专注学习</h1>
+        <p>使用番茄钟开始学习</p>
+    </header>
+
+
+    <main>
+
+        <!-- 时间选择 -->
+        <section>
+            <h2>选择专注时间</h2>
+
+            <button class="time-btn active" data-min="25">25分钟</button>
+            <button class="time-btn" data-min="45">45分钟</button>
+            <button class="time-btn" data-min="60">60分钟</button>
+            <br><br>
+
+            <label>自定义时长：</label>
+            <br>
+            <input id="customHour" type="number" min="0" placeholder="小时" style="width:32%">
+            <input id="customMin" type="number" min="0" max="59" placeholder="分钟" style="width:32%">
+            <input id="customSec" type="number" min="0" max="59" placeholder="秒" style="width:32%">
+
+            <button id="customBtn" class="btn-primary">使用自定义时长</button>
+        </section>
+
+
+        <!-- 番茄钟 -->
+        <section>
+            <h2>倒计时开始</h2>
+
+            <p id="timerDisplay">25:00</p>
+
+            <button id="startBtn">开始</button>
+            <button id="pauseBtn">暂停</button>
+            <button id="resetBtn">重置</button>
+        </section>
+
+
+        <!-- 今日记录 -->
+        <section>
+            <h2>今日专注</h2>
+
+            <p>完成次数：<span id="focusCount">0</span></p>
+            <p>累计时间：<span id="focusMinutes">0</span> 分钟</p>
+        </section>
+
+    </main>
+
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="course.html">课程</a>
+        <a href="task.html">任务</a>
+        <a href="focus.html" class="active">专注</a>
+        <a href="profile.html">我的</a>
+    </nav>
+
+    <script src="js/timer.js"></script>
+
+</body>
+
+</html>

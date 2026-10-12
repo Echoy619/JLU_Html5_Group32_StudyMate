@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate - 我的</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <h1>我的学习</h1>
+        <p>查看你的学习情况</p>
+    </header>
+
+
+
+    <main>
+
+        <section>
+    <h2>今日学习数据</h2>
+
+    <p>
+        今日课程：
+        <strong id="today-study-courses">0</strong>
+    </p>
+
+    <p>
+        完成任务：
+        <strong id="today-completed-tasks">0</strong>
+    </p>
+
+    <p>
+        待完成任务：
+        <strong id="today-todo-tasks">0</strong>
+    </p>
+
+    <p>
+        专注时间：
+        <strong id="today-focus-time">0</strong> 分钟
+    </p>
+</section>
+        
+        <!-- 我的学习统计 -->
+<section class="my-study">
+
+    <h2>My Study</h2>
+
+    <p>
+        今日课程：
+        <strong id="study-courses">0</strong>
+    </p>
+
+    <p>
+        完成任务：
+        <strong id="study-completed-tasks">0</strong>
+    </p>
+
+    <p>
+        待完成：
+        <strong id="study-todo-tasks">0</strong>
+    </p>
+
+    <p>
+        专注时间：
+        <strong id="study-focus-minutes">0</strong> min
+    </p>
+
+    <p>
+        完成番茄钟：
+        <strong id="study-focus-count">0</strong> 次
+    </p>
+
+</section>
+    </main>
+
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="course.html">课程</a>
+        <a href="task.html">任务</a>
+        <a href="focus.html">专注</a>
+        <a href="profile.html" class="active">我的</a>
+    </nav>
+
+    <script src="js/timer.js"></script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // =================================
+    // 1. 今日课程
+    // =================================
+
+    const courses =
+        JSON.parse(localStorage.getItem('courses')) || [];
+
+    const todayDay = new Date().getDay();
+
+    const todayCourses = courses.filter(function(course) {
+        return course.day === todayDay;
+    });
+
+    document.getElementById('study-courses').textContent =
+        todayCourses.length;
+
+
+    // =================================
+    // 2. 任务统计
+    // =================================
+
+    const tasks =
+        JSON.parse(localStorage.getItem('tasks')) || [];
+
+    const completedTasks = tasks.filter(function(task) {
+        return task.completed === true;
+    });
+
+    const todoTasks = tasks.filter(function(task) {
+        return task.completed === false;
+    });
+
+    document.getElementById('study-completed-tasks').textContent =
+        completedTasks.length;
+
+    document.getElementById('study-todo-tasks').textContent =
+        todoTasks.length;
+
+
+    // =================================
+    // 3. 今日专注统计
+    // =================================
+
+    const focusSessions =
+        JSON.parse(localStorage.getItem('focusSessions')) || [];
+
+    const now = new Date();
+
+    const todayString =
+        now.getFullYear() + '-' +
+        String(now.getMonth() + 1).padStart(2, '0') + '-' +
+        String(now.getDate()).padStart(2, '0');
+
+    const todaySessions = focusSessions.filter(function(session) {
+        return session.date === todayString;
+    });
+
+
+    // =================================
+    // 4. 今日专注分钟
+    // =================================
+
+    const focusMinutes = todaySessions.reduce(
+        function(total, session) {
+            return total + session.minutes;
+        },
+        0
+    );
+
+    document.getElementById('study-focus-minutes').textContent =
+        focusMinutes;
+
+
+    // =================================
+    // 5. 今日完成番茄钟次数
+    // =================================
+
+    document.getElementById('study-focus-count').textContent =
+        todaySessions.length;
+
+    // =================================
+   // 6. 更新上方“今日学习数据”
+   // =================================
+
+    document.getElementById('today-study-courses').textContent =
+        todayCourses.length;
+
+    document.getElementById('today-completed-tasks').textContent =
+        completedTasks.length;
+
+    document.getElementById('today-todo-tasks').textContent =
+        todoTasks.length;
+
+    document.getElementById('today-focus-time').textContent =
+        focusMinutes;
+
+});
+</script>
+
+</body>
+
+</html>

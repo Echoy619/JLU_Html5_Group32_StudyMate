@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate - 任务</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <h1>学习任务</h1>
+        <p>管理你的学习任务</p>
+    </header>
+
+
+    <main>
+
+        <!-- 添加任务 -->
+<section>
+
+    <h2>添加任务</h2>
+
+    <!-- 任务名称 -->
+    <div>
+        <label for="taskName">任务名称：</label>
+
+        <input
+            type="text"
+            id="taskName"
+            placeholder="例如：完成Web前端作业"
+        >
+    </div>
+
+    <br>
+
+
+    <!-- 截止日期 -->
+    <div>
+        <label for="taskDate">截止日期：</label>
+
+        <input
+            type="date"
+            id="taskDate"
+        >
+    </div>
+
+    <br>
+
+
+    <!-- 任务类别 -->
+    <div>
+        <label for="taskCategory">任务类别：</label>
+
+        <select id="taskCategory">
+            <option value="作业">作业</option>
+            <option value="复习">复习</option>
+            <option value="考试">考试</option>
+            <option value="其他">其他</option>
+        </select>
+    </div>
+
+    <br>
+
+
+    <!-- 优先级 -->
+    <div>
+        <label for="taskPriority">优先级：</label>
+
+        <select id="taskPriority">
+            <option value="高">高</option>
+            <option value="中">中</option>
+            <option value="低">低</option>
+        </select>
+    </div>
+
+    <br>
+
+
+    <!-- 添加任务按钮 -->
+    <button id="addTaskButton">添加任务</button>
+
+</section>
+
+
+        <!-- 任务筛选 -->
+<section>
+
+    <h2>任务筛选</h2>
+    <button onclick="filterTasks('all')">
+        全部
+    </button>
+
+    <button onclick="filterTasks('todo')">
+        未完成
+    </button>
+
+    <button onclick="filterTasks('completed')">
+        已完成
+    </button>
+
+</section>
+
+
+        <!-- 任务列表 -->
+<section>
+
+    <h2>我的任务</h2>
+
+    <div id="taskList">
+        <p>暂时没有任务。</p>
+    </div>
+
+</section>
+
+    </main>
+
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="course.html">课程</a>
+        <a href="task.html" class="active">任务</a>
+        <a href="focus.html">专注</a>
+        <a href="profile.html">我的</a>
+    </nav>
+
+<script src="js/task.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+
+</html>
